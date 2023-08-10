@@ -10,13 +10,19 @@ function addItem(e){
     e.preventDefault();
 
     let newItem=document.getElementById('item').value;
+    let newItem2=document.getElementById('item1').value
     let li=document.createElement('li');
     li.className='list-group-item';
-    li.appendChild(document.createTextNode(newItem));
+    let value=newItem+' '+newItem2
+    li.appendChild(document.createTextNode(value));
     let deleteBtn=document.createElement('button');
+    let editBtn=document.createElement('button')
     deleteBtn.className='btn btn-danger btn-sm float-right delete';
+    editBtn.className='btn btn-sm float-right';
     deleteBtn.appendChild(document.createTextNode('X'));
+    editBtn.appendChild(document.createTextNode('Edit'));
     li.appendChild(deleteBtn);
+    li.appendChild(editBtn)
     itemList.appendChild(li);
 
 }
