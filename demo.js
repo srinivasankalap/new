@@ -1,13 +1,32 @@
-let temp=document.querySelector('.list-group-item:nth-child(2)');
-temp.style.color='green';
-let ele=document.querySelector('.list-group-item:nth-child(3)');
-ele.remove();
+let list=document.querySelector('#items')
+console.log(list.parentElement)
+list.parentElement.style.backgroundColor='#ccc'
 
-let list=document.querySelectorAll('.list-group-item');
-list[1].style.color='green';
 
-let odd=document.querySelectorAll('li:nth-child(odd)');
+console.log(list.children)
 
-for (let i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor='green'
-}
+console.log(list.firstElementChild)
+list.firstElementChild.textContent='Hello Buddy'
+
+console.log(list.lastElementChild)
+list.lastElementChild.textContent="Fool"
+
+console.log(list.previousElementSibling)
+list.previousElementSibling.style.color='yellow'
+
+
+let newdiv=document.createElement('div')
+newdiv.className='new'
+newdiv.id='newdiv'
+newdiv.setAttribute('title','Hello world')
+console.log(newdiv)
+
+let value=document.createTextNode('Hello World')
+newdiv.appendChild(value)
+console.log(newdiv)
+
+
+let container=document.querySelector('header .container');
+let x=document.querySelector('header h1')
+
+container.insertBefore(newdiv,x)
