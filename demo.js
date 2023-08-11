@@ -5,5 +5,12 @@ function store(e){
     e.preventDefault()
     let temp=document.getElementById('name').value;
     let email=document.getElementById('email').value;
-    localStorage.setItem(temp,email)
+    let myObj={
+        name:temp,
+        mailID:email,
+    }
+    let myObjNew=JSON.stringify(myObj);
+    localStorage.setItem('Details',myObjNew);
+    let myObjoriginal=JSON.parse(myObjNew);
+    console.log(myObjoriginal)
 };
