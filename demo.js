@@ -1,6 +1,6 @@
 let form=document.getElementById('my-form');
 form.addEventListener('submit',store);
-
+let itemList=document.getElementById('items')
 function store(e){
     e.preventDefault()
     let temp=document.getElementById('name').value;
@@ -10,7 +10,11 @@ function store(e){
         mailID:email,
     }
     let myObjNew=JSON.stringify(myObj);
-    localStorage.setItem('Details',myObjNew);
+    localStorage.setItem(email,myObjNew);
     let myObjoriginal=JSON.parse(myObjNew);
     console.log(myObjoriginal)
+    let li=document.createElement('li');
+    li.className='item';
+    li.appendChild(document.createTextNode(temp+' - '+email));
+    itemList.appendChild(li);
 };
